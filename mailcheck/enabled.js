@@ -5,7 +5,7 @@ module.exports = {
   hypothesis: 'mailcheck will lead to higher confirmation rate of accounts',
   startDate: '2015-01-01',
   endDate: '2015-11-01',
-  subjectAttributes: ['uuid', 'isMetricsEnabled', 'forceMailcheck'],
+  subjectAttributes: ['uniqueUserId', 'isMetricsEnabled', 'forceMailcheck'],
   independentVariables: ['mailcheckEnabled'],
   eligibilityFunction: function (subject) {
     if (subject) {
@@ -25,7 +25,7 @@ module.exports = {
     return false;
   },
   groupingFunction: function (subject) {
-    var trial = this.bernoulliTrial(1, subject.uuid);
+    var trial = this.bernoulliTrial(1, subject.uniqueUserId);
 
     if (subject.forceMailcheck === 'true') {
       trial = true;
