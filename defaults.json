@@ -4,5 +4,6 @@
   "mailcheckEnabled": false,
   "sentryEnabled": false,
   "isSampledUser": false,
-  "springCampaign2015": false
+  "springCampaign2015": false,
+  "chooseWhatToSyncMode": "client"
 }
