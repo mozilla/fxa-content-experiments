@@ -8,7 +8,7 @@ module.exports = {
   eligibilityFunction: function (subject) {
     var sampleRate = subject.env === 'development' ? 1.0 : 0.1;
 
-    return !! (subject.env && subject.uniqueUserId && this.bernoulliTrial(sampleRate, subject.uuid));
+    return !! (subject.env && subject.uniqueUserId && this.bernoulliTrial(sampleRate, subject.uniqueUserId));
   },
   groupingFunction: function () {
     return {
