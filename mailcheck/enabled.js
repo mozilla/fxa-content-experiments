@@ -5,7 +5,7 @@ module.exports = {
   hypothesis: 'mailcheck will lead to higher confirmation rate of accounts',
   startDate: '2015-01-01',
   endDate: '2015-11-01',
-  subjectAttributes: ['uniqueUserId', 'isMetricsEnabled', 'forceMailcheck'],
+  subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceMailcheck'],
   independentVariables: ['mailcheckEnabled'],
   eligibilityFunction: function (subject) {
     if (subject) {
@@ -17,7 +17,7 @@ module.exports = {
         return false;
       }
 
-      if (subject.isMetricsEnabled) {
+      if (subject.isMetricsEnabledValue) {
         return true;
       }
     }
