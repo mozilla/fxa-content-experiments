@@ -4,7 +4,7 @@ module.exports = {
   name: 'the password strength checker is enabled',
   hypothesis: 'the password strength checker will prevent users from signing up with insecure passwords.',
   startDate: '2015-01-01',
-  subjectAttributes: ['uniqueUserId', 'isMetricsEnabled', 'forcePasswordStrengthCheck'],
+  subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forcePasswordStrengthCheck'],
   independentVariables: ['passwordStrengthCheckEnabled'],
   eligibilityFunction: function (subject) {
     if (subject) {
@@ -16,7 +16,7 @@ module.exports = {
         return false;
       }
 
-      if (subject.isMetricsEnabled) {
+      if (subject.isMetricsEnabledValue) {
         return true;
       }
     }

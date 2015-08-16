@@ -1,8 +1,9 @@
 {
   "avatarLinkVisible": false,
   "communicationPrefsVisible": false,
-  "mailcheckEnabled": false,
-  "sentryEnabled": false,
   "isSampledUser": false,
+  "mailcheckEnabled": false,
+  "passwordStrengthCheckEnabled": false,
+  "sentryEnabled": false,
   "springCampaign2015": false
 }
