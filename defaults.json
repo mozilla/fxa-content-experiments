@@ -1,9 +1,13 @@
 {
   "avatarLinkVisible": false,
   "communicationPrefsVisible": false,
+  "coppaView": false,
   "isSampledUser": false,
-  "mailcheckEnabled": false,
+  "mailcheck": false,
+  "openGmail": false,
   "passwordStrengthCheckEnabled": false,
   "sentryEnabled": false,
-  "springCampaign2015": false
+  "springCampaign2015": false,
+  "syncCheckbox": false,
+  "chooseAbExperiment": false
 }
