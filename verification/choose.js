@@ -21,7 +21,7 @@ module.exports = {
     return false;
   },
   groupingFunction: function (subject) {
-    var EXPERIMENT_CHOICES = ['mailcheck', 'open-gmail', 'coppa', 'syncCheckbox'];
+    var EXPERIMENT_CHOICES = ['mailcheck', 'openGmail', 'coppaView', 'syncCheckbox'];
     var choice = this.uniformChoice(EXPERIMENT_CHOICES, subject.uniqueUserId);
 
     if (subject.forceExperiment) {
