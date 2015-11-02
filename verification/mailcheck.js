@@ -4,7 +4,6 @@ module.exports = {
   name: 'mailcheck is enable or disabled',
   hypothesis: 'mailcheck will lead to higher confirmation rate of accounts',
   startDate: '2015-01-01',
-  endDate: '2015-11-01',
   subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
   independentVariables: ['mailcheck'],
   eligibilityFunction: function (subject) {
