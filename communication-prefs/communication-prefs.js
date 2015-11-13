@@ -5,14 +5,14 @@ module.exports = {
   startDate: '2015-01-01',
   subjectAttributes: ['lang'],
   independentVariables: ['communicationPrefsVisible'],
-  eligibilityFunction: function () {
-    return true;
+  eligibilityFunction: function (subject) {
+    return !! (subject && subject.lang);
   },
   groupingFunction: function (subject) {
     var AVAILABLE_LANGUAGES = [
       'de',
       'en',
-      'en-us',
+      'en-[a-z]{2}',
       'es',
       'fr',
       'hu',
@@ -22,13 +22,18 @@ module.exports = {
       'ru'
     ];
 
+    // double quotes are used instead of single quotes to avoid an
+    // "unterminated string literal" error
+    var availableLocalesRegExpStr = "^(" + AVAILABLE_LANGUAGES.join("|") + ")$"; //eslint-disable-line quotes
+    var availableLocalesRegExp = new RegExp(availableLocalesRegExpStr);
+
     function normalizeLanguage(lang) {
       return lang.toLowerCase().replace(/_/g, '-');
     }
 
     function areCommunicationPrefsAvailable(lang) {
       var normalizedLanguage = normalizeLanguage(lang);
-      return (AVAILABLE_LANGUAGES.indexOf(normalizedLanguage) > -1);
+      return availableLocalesRegExp.test(normalizedLanguage);
     }
 
     return {
