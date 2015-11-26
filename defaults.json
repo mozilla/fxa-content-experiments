@@ -2,6 +2,7 @@
   "avatarLinkVisible": false,
   "communicationPrefsVisible": false,
   "coppaView": false,
+  "deviceListVisible": false,
   "isSampledUser": false,
   "mailcheck": false,
   "openGmail": false,
