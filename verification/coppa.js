@@ -4,7 +4,6 @@ module.exports = {
   name: 'coppa is dropdown or input',
   hypothesis: 'coppa is better as an input field than a dropdown',
   startDate: '2015-01-01',
-  endDate: '2016-02-01',
   subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
   independentVariables: ['coppaView'],
   eligibilityFunction: function (subject) {

@@ -4,7 +4,6 @@ module.exports = {
   name: 'open gmail button is shown or hidden',
   hypothesis: 'providing an open gmail.com is useful for the verification rate',
   startDate: '2015-01-01',
-  endDate: '2016-02-01',
   subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup', 'email'],
   independentVariables: ['openGmail'],
   eligibilityFunction: function (subject) {
