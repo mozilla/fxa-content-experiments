@@ -4,7 +4,6 @@ module.exports = {
   name: 'sync checkbox is before or after signup',
   hypothesis: 'more users click choose what to sync if it is before the large signup button',
   startDate: '2015-01-01',
-  endDate: '2016-02-01',
   subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
   independentVariables: ['syncCheckbox'],
   eligibilityFunction: function (subject) {
