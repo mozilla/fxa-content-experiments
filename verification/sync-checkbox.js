@@ -1,11 +1,11 @@
 'use strict';
 
 module.exports = {
-  name: 'show or hide the reveal password button',
-  hypothesis: 'show button is useful for users',
+  name: 'sync checkbox is before or after signup',
+  hypothesis: 'more users click choose what to sync if it is before the large signup button',
   startDate: '2015-01-01',
   subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
-  independentVariables: ['showPassword'],
+  independentVariables: ['syncCheckbox'],
   eligibilityFunction: function (subject) {
     if (subject) {
       if (subject.forceExperimentGroup || subject.isMetricsEnabledValue) {
@@ -24,7 +24,7 @@ module.exports = {
     }
 
     return {
-      showPassword: choice
+      syncCheckbox: choice
     };
   }
 };
