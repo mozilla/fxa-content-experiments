@@ -14,6 +14,7 @@ module.exports = {
       'en',
       'en-[a-z]{2}',
       'es',
+      'es-[a-z]{2}',
       'fr',
       'hu',
       'id',
