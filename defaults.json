@@ -8,6 +8,7 @@
   "openGmail": false,
   "passwordStrengthCheckEnabled": false,
   "sentryEnabled": false,
+  "serviceListVisible": false,
   "springCampaign2015": false,
   "syncCheckbox": false,
   "chooseAbExperiment": false
