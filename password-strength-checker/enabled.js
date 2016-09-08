@@ -7,21 +7,11 @@ module.exports = {
   subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forcePasswordStrengthCheck'],
   independentVariables: ['passwordStrengthCheckEnabled'],
   eligibilityFunction: function (subject) {
-    if (subject) {
-      if (subject.forcePasswordStrengthCheck === 'true') {
-        return true;
-      }
-
-      if (subject.forcePasswordStrengthCheck === 'false') {
-        return false;
-      }
-
-      if (subject.isMetricsEnabledValue) {
-        return true;
-      }
+    if (subject && subject.forcePasswordStrengthCheck === 'false') {
+      return false;
     }
 
-    return false;
+    return true;
   },
   groupingFunction: function (subject) {
     return {
