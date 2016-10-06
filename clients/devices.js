@@ -3,11 +3,19 @@
 module.exports = {
   name: 'Is the devices list settings section visible',
   startDate: '2015-01-01',
-  subjectAttributes: ['forceDeviceList'],
+  subjectAttributes: ['forceDeviceList', 'uid'],
   independentVariables: ['deviceListVisible'],
   eligibilityFunction: function (subject) {
-    if (subject && subject.forceDeviceList) {
-      return true;
+    var sampleRate = 0.1;
+
+    if (subject) {
+      if (subject.forceDeviceList) {
+        return true;
+      }
+
+      if (subject.uid) {
+        return !! (this.bernoulliTrial(sampleRate, subject.uid));
+      }
     }
 
     return false;
