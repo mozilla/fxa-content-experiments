@@ -6,7 +6,7 @@ module.exports = {
   subjectAttributes: ['forceDeviceList', 'uid'],
   independentVariables: ['deviceListVisible'],
   eligibilityFunction: function (subject) {
-    var sampleRate = 0.6;
+    var sampleRate = 1;
 
     if (subject) {
       if (subject.forceDeviceList) {
