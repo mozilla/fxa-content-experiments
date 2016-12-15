@@ -1,16 +1,14 @@
 'use strict';
 
 module.exports = {
-  name: 'show or hide the reveal password button',
-  hypothesis: 'show button is useful for users',
+  name: 'Should the user see the "connect another device" screen',
+  hypothesis: 'A nudge to connect another device will help increase multi-device users',
   startDate: '2015-01-01',
   subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
-  independentVariables: ['showPassword'],
+  independentVariables: ['connectAnotherDevice'],
   eligibilityFunction: function (subject) {
     if (subject) {
-      if (subject.forceExperimentGroup || subject.isMetricsEnabledValue) {
-        return true;
-      }
+      return !! (subject.forceExperimentGroup || subject.isMetricsEnabledValue);
     }
 
     return false;
@@ -24,7 +22,7 @@ module.exports = {
     }
 
     return {
-      showPassword: choice
+      connectAnotherDevice: choice
     };
   }
 };

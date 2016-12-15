@@ -21,7 +21,7 @@ module.exports = {
     return false;
   },
   groupingFunction: function (subject) {
-    var EXPERIMENT_CHOICES = ['mailcheck', 'showPassword'];
+    var EXPERIMENT_CHOICES = ['mailcheck', 'connectAnotherDevice'];
     var choice = this.uniformChoice(EXPERIMENT_CHOICES, subject.uniqueUserId);
 
     if (subject.forceExperiment) {
