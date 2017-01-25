@@ -7,7 +7,7 @@ module.exports = {
   subjectAttributes: ['able', 'uniqueUserId', 'isMetricsEnabledValue', 'forceExperiment', 'forceExperimentGroup'],
   independentVariables: ['mailcheck'],
   eligibilityFunction: function (subject) {
-    if (subject) {
+    if (subject && subject.able) {
       return subject.able.choose('chooseAbExperiment', subject) === 'mailcheck';
     }
     return false;

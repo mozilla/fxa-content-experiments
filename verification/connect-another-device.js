@@ -7,7 +7,7 @@ module.exports = {
   subjectAttributes: ['able', 'uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
   independentVariables: ['connectAnotherDevice'],
   eligibilityFunction: function (subject) {
-    if (subject) {
+    if (subject && subject.able) {
       return subject.able.choose('chooseAbExperiment', subject) === 'connectAnotherDevice';
 
     }
