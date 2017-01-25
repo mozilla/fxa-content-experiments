@@ -4,11 +4,12 @@ module.exports = {
   name: 'Should the user see the "connect another device" screen',
   hypothesis: 'A nudge to connect another device will help increase multi-device users',
   startDate: '2015-01-01',
-  subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
+  subjectAttributes: ['able', 'uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
   independentVariables: ['connectAnotherDevice'],
   eligibilityFunction: function (subject) {
     if (subject) {
-      return !! (subject.forceExperimentGroup || subject.isMetricsEnabledValue);
+      return subject.able.choose('chooseAbExperiment', subject) === 'connectAnotherDevice';
+
     }
 
     return false;

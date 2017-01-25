@@ -4,15 +4,12 @@ module.exports = {
   name: 'mailcheck is enable or disabled',
   hypothesis: 'mailcheck will lead to higher confirmation rate of accounts',
   startDate: '2015-01-01',
-  subjectAttributes: ['uniqueUserId', 'isMetricsEnabledValue', 'forceExperimentGroup'],
+  subjectAttributes: ['able', 'uniqueUserId', 'isMetricsEnabledValue', 'forceExperiment', 'forceExperimentGroup'],
   independentVariables: ['mailcheck'],
   eligibilityFunction: function (subject) {
     if (subject) {
-      if (subject.forceExperimentGroup || subject.isMetricsEnabledValue) {
-        return true;
-      }
+      return subject.able.choose('chooseAbExperiment', subject) === 'mailcheck';
     }
-
     return false;
   },
   groupingFunction: function (subject) {
