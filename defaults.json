@@ -2,6 +2,7 @@
   "appsListVisible": false,
   "avatarLinkVisible": false,
   "communicationPrefsVisible": false,
+  "connectAnotherDevice": false,
   "coppaView": false,
   "deviceListVisible": false,
   "isSampledUser": false,
