@@ -9,6 +9,7 @@
   "mailcheck": false,
   "openGmail": false,
   "passwordStrengthCheckEnabled": false,
+  "sendSms": false,
   "sentryEnabled": false,
   "springCampaign2015": false,
   "syncCheckbox": false,
