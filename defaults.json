@@ -11,6 +11,7 @@
   "passwordStrengthCheckEnabled": false,
   "sendSms": false,
   "sentryEnabled": false,
+  "sessionsListVisible": false,
   "springCampaign2015": false,
   "syncCheckbox": false,
   "chooseAbExperiment": false
