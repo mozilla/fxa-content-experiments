@@ -26,7 +26,8 @@ module.exports = {
     // a random sampling of 5% of all sessions.
     // 2.5% will be in the control group,
     // 2.5% in the treatment group.
-    return this.bernoulliTrial(0.05, subject.uniqueUserId);
+    // Temporarily disabled
+    return this.bernoulliTrial(0.00, subject.uniqueUserId);
   },
 
   groupingFunction: function (subject) {
