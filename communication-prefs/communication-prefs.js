@@ -20,7 +20,8 @@ module.exports = {
       'id',
       'pl',
       'pt-br',
-      'ru'
+      'ru',
+      'zh-TW'
     ];
 
     // double quotes are used instead of single quotes to avoid an
