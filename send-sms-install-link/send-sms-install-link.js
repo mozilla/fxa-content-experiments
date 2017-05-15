@@ -24,16 +24,16 @@ module.exports = {
     }
 
     // enable for everyone who reports metrics to DataDog - 10% of the population
-    // + 10 extra percent of the population who are not reporting to DataDog, for
-    // a total of 20%.
+    // + 40 extra percent of the population who are not reporting to DataDog, for
+    // a total of 50%.
     //
-    // Getting 20% total percent when 10% is already chosen and selections
+    // Getting 50% total percent when 10% is already chosen and selections
     // are independent is a bit strange. We start with the 10% that report
-    // to DataDog, then add another 10%. Group A is the group who report to
+    // to DataDog, then add another 40%. Group A is the group who report to
     // DataDog, Group B is the 2nd selection. 10% of Group B will be a
     // part of Group A, so we have to ignore them and choose others in
-    // their place. This means we have to choose > 10% of the general
-    // population for Group B to arrive at 10% of the population
+    // their place. This means we have to choose > 40% of the general
+    // population for Group B to arrive at 40% of the population
     // who are not already in Group A.
     if (subject.isMetricsEnabledValue) {
       return true;
@@ -44,7 +44,7 @@ module.exports = {
     // N = total population
     // x = % to solve for.
     //
-    // .2N = .1N + (xN - .1xN)
+    // .5N = .1N + (xN - .1xN)
     // /\    /\     /\   /\
     // |     |      |    |
     // |     |      |     --- Group B also in Group A
@@ -52,11 +52,11 @@ module.exports = {
     // |     ---------------- Group A (people reporting to DataDog)
     // ---------------------- target
     //
-    // .2N = .1N + .9xN
-    // .1N = .9xN
-    // .1N / .9N = x
-    // .11111 = x
-    return this.bernoulliTrial(0.1111, subject.uniqueUserId);
+    // .5N = .1N + .9xN
+    // .4N = .9xN
+    // .4N / .9N = x
+    // .4444 = x
+    return this.bernoulliTrial(0.4444, subject.uniqueUserId);
   },
 
   groupingFunction: function (subject) {
