@@ -1,4 +1,6 @@
-# fxa-content-experiments
+# fxa-content-experiments [deprecated]
+
+> This repository is deprecated, all experiments now live in the fxa-content-server repository
 
 [![Build Status](https://travis-ci.org/mozilla/fxa-content-experiments.svg?branch=master)](https://travis-ci.org/mozilla/fxa-content-experiments)
 
